@@ -1,0 +1,23 @@
+wget https://nodejs.org/dist/v14.15.3/node-v14.15.3-linux-x64.tar.xz
+tar -xvf node-v14.15.3-linux-x64.tar.xz
+sudo mv node-v14.15.3-linux-x64 /usr/local/
+sudo ln -s /usr/local/node-v14.15.3-linux-x64/bin/npm /usr/local/bin/npm
+sudo ln -s /usr/local/node-v14.15.3-linux-x64/bin/node /usr/local/bin/node
+sudo apt-get install lrzsz
+ssh-keygen -t rsa -C "zjm@qq.com"
+// add ssh key to github
+git clone git@github.com:jixinjifo/dtcback.git
+sudo apt install net-tools
+// install nginx
+wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add - \
+&& sudo apt-get -y install software-properties-common \
+&& sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
+&& sudo apt-get update \
+&& sudo apt-get install -y libpcre3-dev \
+    libssl-dev perl make build-essential curl \
+&& sudo apt-get update \
+&& sudo apt-get install openresty -y
+sudo ln -s /usr/local/openresty/nginx/sbin/nginx /usr/local/bin/nginx
+// 修改配置文件 /usr/local/openresty/nginx/conf/nginx.conf
+nginx -t
+nginx -c /usr/local/nginx/conf/nginx.conf

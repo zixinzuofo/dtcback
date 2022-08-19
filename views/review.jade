@@ -1,0 +1,14 @@
+doctype html
+
+extends layout
+
+block content
+  h1= title
+  p ReviewId: #{reviewId}
+  script(type='text/javascript').
+    function updatereviewStatus(){
+      console.log(#{reviewId});
+    }
+  input(type="submit", id="pass", onclick="updatereviewStatus()", value="pass")
+  &nbsp&nbsp&nbsp&nbsp
+  input(type="submit", id="reject", onclick="updatereviewStatus()", value="reject")

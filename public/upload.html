@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>上传图片</title>
+<script type="text/javascript" src="javascripts/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="javascripts/upload.js"></script>
+<body>
+    <h1>Image Upload Demo</h1>
+    <p>
+        <!-- 用于文件上传的表单元素 -->
+        <form name="demoForm" id="demoForm" method="post" enctype="multipart/form-data" action="javascript: uploadAndSubmit();">
+            <p>Upload Image: <input type="file" multiple="multiple" name="file" id="file" onchange="showPic()" /></p>
+            <img alt="image preview" id="image" width="200px" height="200px" style="display:none;"/>
+            <p><input type="submit" accept="image/*" value="Submit" /></p>
+        </form>
+        <div>Progressing (in Bytes): <span id="bytesRead">
+            </span> / <span id="bytesTotal"></span>
+        </div>
+    </p>
+</body>
+</html>
